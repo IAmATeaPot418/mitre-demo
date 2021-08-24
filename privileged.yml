@@ -1,0 +1,26 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: hackme
+  labels:
+    production: false
+    insecure: true
+    purpose: pwnage
+spec:
+  hostNetwork: true
+  hostPID: true
+  hostIPC: true
+  containers:
+  - name: hackme
+    image: busybox
+    securityContext:
+      privileged: true
+    volumeMounts:
+    - mountPath: /host
+      name: pwnmemount
+    command: [ "/bin/sh", "-c", "echo" ]
+    args: [ "while true; do sleep 10; done;" ]
+  volumes:
+  - name: pwnmevolume
+    hostPath:
+      path: /
