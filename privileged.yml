@@ -1,7 +1,17 @@
+# Namespace for privledged deployment
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: vulnerable
+  labels:
+    name: pwnme
+---
+
 apiVersion: v1
 kind: Pod
 metadata:
-  name: hackme
+  name: pwnme
+  namespace: vulnerable
   labels:
     production: false
     insecure: true
