@@ -106,7 +106,7 @@ EXIT
 
 export TOKEN=<insert-token>
 
-oc login https://api.js-09-14-sweet-drawer-water.openshift.infra.rox.systems:6443 --token=$TOKEN 
+oc login <API-SERVER> --token=$TOKEN 
 
 So what can I do. I don't want to set off a ton of alarms so I need to figure out who I am and what permissions I have before I start doing things. I'll do this a bit more slowly.
 
